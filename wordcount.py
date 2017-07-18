@@ -66,13 +66,9 @@ def print_words(filename):
     print word, word_count[word]
 
 ###
-def word_occurance(tuple):
-  occur = tuple[1]
-  return occur
-
 def print_top(filename):
   word_count = word_count_dict(filename)
-  items = sorted(word_count.items(), key=word_occurance, reverse=True)
+  items = sorted(word_count.items(), key=lambda tuple: tuple[1], reverse=True)
   for item in items[:25]:
     print item[0], item[1]
   
